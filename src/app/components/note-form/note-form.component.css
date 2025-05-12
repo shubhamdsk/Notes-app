@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+input,
+textarea {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+button {
+  align-self: flex-start;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

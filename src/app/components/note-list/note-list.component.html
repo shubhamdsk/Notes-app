@@ -1,0 +1,17 @@
+<div class="note-grid">
+  <mat-card *ngFor="let note of notes" class="note-card">
+    <mat-card-title>{{ note.title }}</mat-card-title>
+    <mat-card-content>
+      <p>{{ note.content }}</p>
+      <p><strong>Tags:</strong> {{ note.tags.join(", ") }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button (click)="edit.emit(note)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="delete.emit(note.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

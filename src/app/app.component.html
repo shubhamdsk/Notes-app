@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">📝 Notes App</mat-toolbar>
+
+<mat-card class="filter-section">
+  <form
+    [formGroup]="filterForm"
+    (ngSubmit)="applyFilters()"
+    class="filter-form"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tags (comma separated)</mat-label>
+      <input matInput formControlName="tags" />
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" type="submit">
+      Apply Filters
+    </button>
+    <button mat-stroked-button type="button" (click)="clearFilters()">
+      Clear
+    </button>
+  </form>
+</mat-card>
+
+<app-note-form
+  [editingNote]="editingNote"
+  (save)="onSave($event)"
+></app-note-form>
+<app-note-list
+  [notes]="filteredNotes"
+  (edit)="onEdit($event)"
+  (delete)="onDelete($event)"
+></app-note-list>
